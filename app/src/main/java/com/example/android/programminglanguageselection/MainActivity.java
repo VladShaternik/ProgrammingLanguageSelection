@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             RadioButton answer4 = findViewById(R.id.answer4);
 
             // PROCESSING - create a new toast
-            Toast thinkingToast = Toast.makeText(getApplicationContext(), null, Toast.LENGTH_SHORT);
+            Toast thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_hmmm, Toast.LENGTH_LONG);
 
             // PROCESSING - get the image covering the activity
             ImageView imageView = findViewById(R.id.thinking_image_view);
@@ -143,16 +143,15 @@ public class MainActivity extends AppCompatActivity {
             imageView.setEnabled(false);
 
             // OUTPUT - thinking toasts
-            thinkingToast.setText(R.string.thinking_hmmm);
             thinkingToast.show();
 
-            thinkingToast.setText(R.string.thinking_interesting);
+            thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_interesting, Toast.LENGTH_SHORT);
             thinkingToast.show();
 
-            thinkingToast.setText(R.string.thinking_maybe);
+            thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_maybe, Toast.LENGTH_SHORT);
             thinkingToast.show();
 
-            thinkingToast.setText(R.string.thinking_result_ready);
+            thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_result_ready, Toast.LENGTH_SHORT);
             thinkingToast.show();
 
             // PROCESSING - wait until all of the toasts displayed, then change activity, and draw
