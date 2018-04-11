@@ -86,9 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
             // OUTPUT - draw the first question
             drawTest();
-        }
-
-        if (questionCount < questionsAmt) {
+        } else if (questionCount < questionsAmt) {
             // PROCESSING - get all of the radio buttons
             RadioButton answer1 = findViewById(R.id.answer1);
             RadioButton answer2 = findViewById(R.id.answer2);
