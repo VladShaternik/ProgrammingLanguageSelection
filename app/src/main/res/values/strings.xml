@@ -1,0 +1,147 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Welcoming text-->
+    <string name="app_name">Programming Language Selection</string>
+    <string name="test_description">In today\'s world, there are hundreds, if not thousands of
+        different programming languages. Each of them has its own advantages and disadvantages,
+        which are not always obvious. That\'s why for a person who wants to become a developer,
+        it is super difficult or even impossible to decide which language to choose.\n\nTo solve
+        this problem, I made a short interactive test, which will help to determine, which
+        programming language is the best for you ☺</string>
+
+    <!-- Buttons -->
+    <string name="begin_test_button">Begin</string>\
+    <string name="repeat_test_button">Try again</string>
+
+    <!-- Question counter -->
+    <string name="question_count"><xliff:g example="1" id="current_question">%d</xliff:g> of
+        <xliff:g example="8" id="questions_amount">%d</xliff:g></string>
+
+    <!-- Images descriptions -->
+    <string name="thinking_img">Thinking image</string>
+    <string name="welcoming_img">Welcoming image</string>
+    <string name="system_programmer_img_content_desc">C++ photo</string>
+    <string name="python_programmer_img_content_desc">Python photo</string>
+    <string name="java_programmer_img_content_desc">Java photo</string>
+    <string name="front_end_img_content_desc">JS photo</string>
+    <string name="php_programmer_img_content_desc">PHP photo</string>
+
+    <!-- Questions -->
+    <string name="question_1">What do you want to develop?</string>
+    <string name="question_2">What do you do?</string>
+    <string name="question_3">Where do you want to work?</string>
+    <string name="question_4">What do you like more?</string>
+    <string name="question_5">How much time are you willing to spend on training?</string>
+    <string name="question_6">Are you ready to constantly learn something new?</string>
+    <string name="question_7">Have you programmed before?</string>
+    <string name="question_8">What do you think is better? With what would you like to work?</string>
+
+    <!-- Answers -->
+    <!-- First question -->
+    <string name="q_1_answer_1">Drivers for hardware</string>
+    <string name="q_1_answer_2">Programs and games for tablets and smartphones</string>
+    <string name="q_1_answer_3">Websites and Internet projects</string>
+    <string name="q_1_answer_4">Not sure yet</string>
+
+    <!-- Second question -->
+    <string name="q_2_answer_1">Studying in school</string>
+    <string name="q_2_answer_2">I am in College or University</string>
+    <string name="q_2_answer_3">Studying, but missing a lot of classes:3</string>
+    <string name="q_2_answer_4">I have a job (not studying)</string>
+
+    <!-- Third question -->
+    <string name="q_3_answer_1">In a large organization</string>
+    <string name="q_3_answer_2">In the Internet studio</string>
+    <string name="q_3_answer_3">Startup</string>
+    <string name="q_3_answer_4">I want to become a freelancer and work for myself</string>
+
+    <!-- Fourth question -->
+    <string name="q_4_answer_1">Simple work and relatively low salary at the beginning</string>
+    <string name="q_4_answer_2">Complicated, but interesting and highly paid work</string>
+    <string name="q_4_answer_3">Something moderate, I don\'t want to do something complicated, but
+        I also don\'t want to do something too boring</string>
+    <string name="q_4_answer_4">Haven\'t decided yet</string>
+
+    <!-- Fifth question -->
+    <string name="q_5_answer_1">I\'m ready to meditate for years, my mantra will be language
+        manuals, and I will reach zen 🧘</string>
+    <string name="q_5_answer_2">Not very much, I want to start working and earning as soon as
+        possible</string>
+    <string name="q_5_answer_3">Long, but no more than a couple years</string>
+    <string name="q_5_answer_4">I don\'t know</string>
+
+    <!-- Sixth question -->
+    <string name="q_6_answer_1">Yes, I\'m always ready to be in a trend</string>
+    <string name="q_6_answer_2">I need a language in which everything will be stable</string>
+    <string name="q_6_answer_3">I want to be in trend, but I don\'t want to be getting updates
+        every day</string>
+    <string name="q_6_answer_4">Not sure yet</string>
+
+    <!-- Seventh question -->
+    <string name="q_7_answer_1">Yes, I already know one or more programming language</string>
+    <string name="q_7_answer_2">Yes, I have some understanding how computers work</string>
+    <string name="q_7_answer_3">Not at all😋</string>
+    <string name="q_7_answer_4">I am a guru at programming, and I am here just to look at your
+        ridiculous test app</string>
+
+    <!-- Eighth question -->
+    <string name="q_8_answer_1">Interpreter</string>
+    <string name="q_8_answer_2">Compiler</string>
+    <string name="q_8_answer_3">Both are fine</string>
+    <string name="q_8_answer_4">Whet? I don\'t know what is this. Show me the results!</string>
+
+    <!-- Outcomes -->
+    <!-- First outcome -->
+    <string name="system_programmer">System programmer ⭐</string>
+    <string name="system_programmer_result">You would be an excellent system programmer! It is a
+        specialist who develops operating systems, interfaces to distributed databases, and works
+        with networks. Developers of this category are the rarest and highly paid.\n\nIn order
+        to become a true "system programmer", you will need to learn the language C.\nHere is a
+        link where you can start searching how to learn it yourself ☺</string>
+    <string name="system_programmer_link" tools:ignore="TypographyDashes">
+        https://www.udacity.com/course/c-for-programmers--ud210</string>
+
+    <!-- Second outcome -->
+    <string name="php_programmer">PHP programmer ⭐</string>
+    <string name="php_programmer_result">The test showed that the development of the backend
+        is in your blood. In this area, a huge stack of various technologies is used, but PHP in
+        conjunction with MySQL - the most often.\nHere is a link where you can start searching
+        how to learn it yourself ☺</string>
+    <string name="php_programmer_link" tools:ignore="TypographyDashes">
+        https://www.udacity.com/course/android-basics-data-storage--ud845</string>
+
+    <!-- Third outcome -->
+    <string name="front_end">Frontend developer ⭐</string>
+    <string name="front_end_result">According to the results of the test, you would have become an
+        excellent front-end programmer! This is a specialist whose task is to create and support
+        the client side of the website - everything that you see in the browser.\n\nTo become a
+        front-line soldier, you need to learn JavaScript - a modern and dynamically developing
+        language with a huge community.\nHere is a link where you can start searching how to
+        learn it yourself ☺</string>
+    <string name="front_end_link" tools:ignore="TypographyDashes">
+        https://www.udacity.com/course/intro-to-javascript--ud803</string>
+
+    <!-- Fourth outcome -->
+    <string name="java_programmer">Java programmer ⭐</string>
+    <string name="java_programmer_result">The test showed that Java is just what you need.
+        This programming language is used to write a wide variety of programs,and lately for
+        writing applications for Android (Like in this Udacity course ♥).\nHere is a link where
+        you can start searching how to learn it yourself ☺</string>
+    <string name="java_programmer_link" tools:ignore="TypographyDashes">
+        https://www.udacity.com/course/android-basics-user-input--ud836</string>
+
+    <!-- Fifth outcome -->
+    <string name="python_programmer">Python programmer ⭐</string>
+    <string name="python_programmer_result">According to the test results, Python is the best for
+        you. This is a universal language that can be used in almost any field - scientific
+        modeling, data processing, writing application logic, automated testing, scripts for
+        deploying infrastructure, and much more!\nHere is a link where you can start searching
+        how to learn it yourself ☺</string>
+    <string name="python_programmer_link" tools:ignore="TypographyDashes">
+        https://www.udacity.com/course/programming-foundations-with-python--ud036</string>
+
+    <!-- Thinking toasts -->
+    <string name="thinking_hmmm" tools:ignore="TypographyEllipsis">Hmmm...</string>
+    <string name="thinking_interesting" tools:ignore="TypographyEllipsis">Interesting...</string>
+    <string name="thinking_maybe">Maybe..</string>
+    <string name="thinking_result_ready">Aha! Here is a result!</string>
+</resources>
