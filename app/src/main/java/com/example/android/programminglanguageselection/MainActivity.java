@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.TransitionManager;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * VARIABLES LIST:
      * isFirstEntry  : whether this is the first enter to questions part (after welcoming text)
+     * userName      : user name
      * questionCount : current question
      * questionsAmt  : total amount of questions
      * outcome1      : current amount of points toward first outcome
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
      * outcome5      : current amount of points toward fifth outcome
      */
     boolean isFirstEntry = true;
+    String userName;
     int questionCount = 1;
     int questionsAmt = 8;
     int outcome1 = 0;
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        userName = getResources().getString(R.string.default_username);
     }
 
     /**
@@ -72,17 +76,18 @@ public class MainActivity extends AppCompatActivity {
           In other case it means that there is no more questions
          */
         if (isFirstEntry) {
+            // PROCESSING - check whether the user entered name. If true then store it
+            EditText userNameInput = findViewById(R.id.name_input);
+            if(!userNameInput.getText().toString().isEmpty()) {
+                userName = userNameInput.getText().toString();
+            }
+
             // PROCESSING - set isFirstEntry to false (so we do not come back to this state after
             // each question)
             isFirstEntry = false;
 
             // PROCESSING - switch to the test activity (single_question)
             setContentView(R.layout.single_question);
-
-            // PROCESSING - get and hide the image covering the activity
-            ImageView imageView = findViewById(R.id.thinking_image_view);
-
-            imageView.setVisibility(ImageView.GONE);
 
             // OUTPUT - draw the first question
             drawTest();
@@ -118,40 +123,8 @@ public class MainActivity extends AppCompatActivity {
             // OUTPUT - draw the current question
             drawTest();
         } else {
-            // PROCESSING - get all of the radio buttons
-            RadioButton answer1 = findViewById(R.id.answer1);
-            RadioButton answer2 = findViewById(R.id.answer2);
-            RadioButton answer3 = findViewById(R.id.answer3);
-            RadioButton answer4 = findViewById(R.id.answer4);
-
             // PROCESSING - create a new toast
-            Toast thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_hmmm, Toast.LENGTH_LONG);
-
-            // PROCESSING - get the image covering the activity
-            ImageView imageView = findViewById(R.id.thinking_image_view);
-
-            // PROCESSING - set all buttons to GONE
-            answer1.setVisibility(RadioButton.GONE);
-            answer2.setVisibility(RadioButton.GONE);
-            answer3.setVisibility(RadioButton.GONE);
-            answer4.setVisibility(RadioButton.GONE);
-
-            // PROCESSING - set the image covering the activity VISIBLE
-            imageView.setVisibility(ImageView.VISIBLE);
-
-            // PROCESSING - disable the image (so user cannot click on it and interrupt toasts work)
-            imageView.setEnabled(false);
-
-            // OUTPUT - thinking toasts
-            thinkingToast.show();
-
-            thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_interesting, Toast.LENGTH_SHORT);
-            thinkingToast.show();
-
-            thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_maybe, Toast.LENGTH_SHORT);
-            thinkingToast.show();
-
-            thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_result_ready, Toast.LENGTH_SHORT);
+            Toast thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_result_ready, Toast.LENGTH_SHORT);
             thinkingToast.show();
 
             // PROCESSING - wait until all of the toasts displayed, then change activity, and draw
@@ -166,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     // PROCESSING - draw result
                     drawResult();
                 }
-            }, 10000);
+            }, 1000);
 
         }
     }
@@ -180,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
     public void returnToMain(View view) {
         // PROCESSING - set all of the variables to their initial values
         isFirstEntry = true;
+        userName = getResources().getString(R.string.default_username);
         questionCount = 1;
         questionsAmt = 8;
         outcome1 = 0;
@@ -195,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This function will show a result to the user (based on user's answers)
      */
+    @SuppressLint("StringFormatInvalid")
     private void drawResult() {
         TextView answerTitle = findViewById(R.id.answer_title);
         TextView answerDesc = findViewById(R.id.answer_description);
@@ -209,33 +184,34 @@ public class MainActivity extends AppCompatActivity {
         switch (bestOption) {
             case 1:
                 answerTitle.setText(R.string.system_programmer);
-                answerDesc.setText(R.string.system_programmer_result);
+                answerDesc.setText(getString(R.string.system_programmer_result, userName));
                 answerLink.setText(R.string.system_programmer_link);
                 answerImg.setImageResource(R.drawable.system_programmer);
                 break;
             case 2:
                 answerTitle.setText(R.string.php_programmer);
-                answerDesc.setText(R.string.php_programmer_result);
+                answerDesc.setText(getString(R.string.php_programmer_result, userName));
                 answerLink.setText(R.string.php_programmer_link);
                 answerImg.setImageResource(R.drawable.php_programmer);
                 break;
             case 3:
                 answerTitle.setText(R.string.front_end);
-                answerDesc.setText(R.string.front_end_result);
+                answerDesc.setText(getString(R.string.front_end_result, userName));
                 answerLink.setText(R.string.front_end_link);
                 answerImg.setImageResource(R.drawable.js);
                 break;
             case 4:
                 answerTitle.setText(R.string.java_programmer);
-                answerDesc.setText(R.string.java_programmer_result);
+                answerDesc.setText(getString(R.string.java_programmer_result, userName));
                 answerLink.setText(R.string.java_programmer_link);
                 answerImg.setImageResource(R.drawable.java);
                 break;
             case 5:
                 answerTitle.setText(R.string.python_programmer);
-                answerDesc.setText(R.string.python_programmer_result);
+                answerDesc.setText(getString(R.string.python_programmer_result, userName));
                 answerLink.setText(R.string.python_programmer_link);
                 answerImg.setImageResource(R.drawable.python);
+//                answerImg.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 break;
         }
     }

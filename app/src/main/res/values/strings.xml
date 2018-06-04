@@ -1,20 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Welcoming text-->
+    <!-- App name -->
     <string name="app_name">Programming Language Selection</string>
+
+    <!-- Welcoming text -->
     <string name="test_description">In today\'s world, there are hundreds, if not thousands of
         different programming languages. Each of them has its own advantages and disadvantages,
         which are not always obvious. That\'s why for a person who wants to become a developer,
         it is super difficult or even impossible to decide which language to choose.\n\nTo solve
         this problem, I made a short interactive test, which will help to determine, which
-        programming language is the best for you ☺</string>
+        programming language is the best for you ☺\n\nJust tell me your name and we can begin!</string>
+
+    <!-- Name entry form  -->
+    <string name="name_entry_form">Name</string>
 
     <!-- Buttons -->
-    <string name="begin_test_button">Begin</string>\
+    <string name="begin_test_button">Begin</string>
     <string name="repeat_test_button">Try again</string>
 
     <!-- Question counter -->
     <string name="question_count"><xliff:g example="1" id="current_question">%d</xliff:g> of
         <xliff:g example="8" id="questions_amount">%d</xliff:g></string>
+
+    <!-- Default username -->
+    <string name="default_username">Programmer</string>
 
     <!-- Images descriptions -->
     <string name="thinking_img">Thinking image</string>
@@ -92,56 +100,54 @@
     <!-- Outcomes -->
     <!-- First outcome -->
     <string name="system_programmer">System programmer ⭐</string>
-    <string name="system_programmer_result">You would be an excellent system programmer! It is a
-        specialist who develops operating systems, interfaces to distributed databases, and works
-        with networks. Developers of this category are the rarest and highly paid.\n\nIn order
-        to become a true "system programmer", you will need to learn the language C.\nHere is a
-        link where you can start searching how to learn it yourself ☺</string>
+    <string name="system_programmer_result"><xliff:g example="Vlad">%s</xliff:g>, you would be an
+        excellent system programmer! It is a specialist who develops operating systems, interfaces
+        to distributed databases, and works with networks. Developers of this category are the
+        rarest and highly paid.\n\nIn order to become a true "system programmer", you will need to
+        learn the language C.\nHere is a link where you can start searching how to learn it
+        yourself ☺</string>
     <string name="system_programmer_link" tools:ignore="TypographyDashes">
         https://www.udacity.com/course/c-for-programmers--ud210</string>
 
     <!-- Second outcome -->
     <string name="php_programmer">PHP programmer ⭐</string>
-    <string name="php_programmer_result">The test showed that the development of the backend
-        is in your blood. In this area, a huge stack of various technologies is used, but PHP in
-        conjunction with MySQL - the most often.\nHere is a link where you can start searching
-        how to learn it yourself ☺</string>
+    <string name="php_programmer_result"><xliff:g example="Vlad">%s</xliff:g>, the test showed that
+        the development of the backend is in your blood. In this area, a huge stack of various
+        technologies is used, but PHP in conjunction with MySQL - the most often.\nHere is a link
+        where you can start searching how to learn it yourself ☺</string>
     <string name="php_programmer_link" tools:ignore="TypographyDashes">
         https://www.udacity.com/course/android-basics-data-storage--ud845</string>
 
     <!-- Third outcome -->
     <string name="front_end">Frontend developer ⭐</string>
-    <string name="front_end_result">According to the results of the test, you would have become an
-        excellent front-end programmer! This is a specialist whose task is to create and support
-        the client side of the website - everything that you see in the browser.\n\nTo become a
-        front-line soldier, you need to learn JavaScript - a modern and dynamically developing
-        language with a huge community.\nHere is a link where you can start searching how to
-        learn it yourself ☺</string>
+    <string name="front_end_result"><xliff:g example="Vlad">%s</xliff:g>, according to the results
+        of the test, you would have become an excellent front-end programmer! This is a specialist
+        whose task is to create and support the client side of the website - everything that you see
+        in the browser.\n\nTo become a front-line soldier, you need to learn JavaScript - a modern
+        and dynamically developing language with a huge community.\nHere is a link where you can
+        start searching how to learn it yourself ☺</string>
     <string name="front_end_link" tools:ignore="TypographyDashes">
         https://www.udacity.com/course/intro-to-javascript--ud803</string>
 
     <!-- Fourth outcome -->
     <string name="java_programmer">Java programmer ⭐</string>
-    <string name="java_programmer_result">The test showed that Java is just what you need.
-        This programming language is used to write a wide variety of programs,and lately for
-        writing applications for Android (Like in this Udacity course ♥).\nHere is a link where
-        you can start searching how to learn it yourself ☺</string>
+    <string name="java_programmer_result"><xliff:g example="Vlad">%s</xliff:g>, the test showed
+        that Java is just what you need. This programming language is used to write a wide
+        variety of programs,and lately for writing applications for Android (Like in this Udacity
+        course ♥).\nHere is a link where you can start searching how to learn it yourself ☺</string>
     <string name="java_programmer_link" tools:ignore="TypographyDashes">
         https://www.udacity.com/course/android-basics-user-input--ud836</string>
 
     <!-- Fifth outcome -->
     <string name="python_programmer">Python programmer ⭐</string>
-    <string name="python_programmer_result">According to the test results, Python is the best for
-        you. This is a universal language that can be used in almost any field - scientific
-        modeling, data processing, writing application logic, automated testing, scripts for
-        deploying infrastructure, and much more!\nHere is a link where you can start searching
-        how to learn it yourself ☺</string>
+    <string name="python_programmer_result"><xliff:g example="Vlad">%s</xliff:g>, according to the
+        test results, Python is the best for you. This is a universal language that can be used
+        in almost any field - scientific modeling, data processing, writing application logic,
+        automated testing, scripts for deploying infrastructure, and much more!\nHere is a link
+        where you can start searching how to learn it yourself ☺</string>
     <string name="python_programmer_link" tools:ignore="TypographyDashes">
         https://www.udacity.com/course/programming-foundations-with-python--ud036</string>
 
     <!-- Thinking toasts -->
-    <string name="thinking_hmmm" tools:ignore="TypographyEllipsis">Hmmm...</string>
-    <string name="thinking_interesting" tools:ignore="TypographyEllipsis">Interesting...</string>
-    <string name="thinking_maybe">Maybe..</string>
     <string name="thinking_result_ready">Aha! Here is a result!</string>
 </resources>

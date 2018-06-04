@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/answer_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/front_end_img_content_desc"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"

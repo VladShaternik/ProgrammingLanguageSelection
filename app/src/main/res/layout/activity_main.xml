@@ -12,7 +12,9 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
 
         <ImageView
             android:id="@+id/welcomePctr"
@@ -30,26 +32,43 @@
             android:id="@+id/testDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginTop="160dp"
             android:padding="10dp"
             android:text="@string/test_description"
             android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/name_input"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/name_entry_form"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/beginButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testDescription" />
 
         <Button
             android:id="@+id/beginButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:background="@color/colorButton"
             android:onClick="nextQuestion"
             android:text="@string/begin_test_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/testDescription"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/name_input" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
