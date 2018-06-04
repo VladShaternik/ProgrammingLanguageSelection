@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Views dimensions -->
+    <dimen name="welcome_img_height">160dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="big_margin">32dp</dimen>
+    <dimen name="questions_count_margin">10dp</dimen>
+    <dimen name="questions_count_height">1dp</dimen>
+    <dimen name="welcome_text_padding">10dp</dimen>
+    <dimen name="value_decided_by_constrain">0dp</dimen>
+    <dimen name="constrain_bias_min">0.0</dimen>
+    <dimen name="layout_weight_higher">1</dimen>
+    <dimen name="results_img_alpha">0.9</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="default_font_size">18sp</dimen>
+    <dimen name="title_font_size">30sp</dimen>
+</resources>

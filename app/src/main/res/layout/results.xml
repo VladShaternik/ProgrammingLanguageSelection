@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/answer_img"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/value_decided_by_constrain"
+        android:layout_height="@dimen/value_decided_by_constrain"
         android:contentDescription="@string/front_end_img_content_desc"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,9 +19,9 @@
         app:srcCompat="@drawable/js" />
 
     <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="0.9"
+        android:layout_width="@dimen/value_decided_by_constrain"
+        android:layout_height="@dimen/value_decided_by_constrain"
+        android:alpha="@dimen/results_img_alpha"
         android:background="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,62 +32,62 @@
         android:id="@+id/answer_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:text="@string/front_end"
         android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:textSize="@dimen/title_font_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/answer_description"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/value_decided_by_constrain"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"
         android:text="@string/front_end_result"
         android:textAlignment="viewStart"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/default_font_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answer_title" />
 
     <TextView
         android:id="@+id/language_link"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/value_decided_by_constrain"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:autoLink="web"
         android:text="@string/system_programmer_link"
-        android:textSize="18sp"
+        android:textSize="@dimen/default_font_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/answer_description"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="@dimen/constrain_bias_min" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:onClick="returnToMain"
         android:text="@string/repeat_test_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/language_link"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="@dimen/constrain_bias_min" />
 
 </android.support.constraint.ConstraintLayout>
