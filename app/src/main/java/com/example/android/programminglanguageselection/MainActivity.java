@@ -8,15 +8,16 @@
 package com.example.android.programminglanguageselection;
 
 import android.annotation.SuppressLint;
-import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.TransitionManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -89,6 +90,26 @@ public class MainActivity extends AppCompatActivity {
             // PROCESSING - switch to the test activity (single_question)
             setContentView(R.layout.single_question);
 
+            // PROCESSING - get all checkboxes
+            android.widget.CheckBox check1 = findViewById(R.id.checkBox1);
+            android.widget.CheckBox check2 = findViewById(R.id.checkBox2);
+            android.widget.CheckBox check3 = findViewById(R.id.checkBox3);
+            android.widget.CheckBox check4 = findViewById(R.id.checkBox4);
+            android.widget.CheckBox check5 = findViewById(R.id.checkBox5);
+
+            // PROCESSING - set checkboxes gone
+            check1.setVisibility(View.GONE);
+            check2.setVisibility(View.GONE);
+            check3.setVisibility(View.GONE);
+            check4.setVisibility(View.GONE);
+            check5.setVisibility(View.GONE);
+
+            // PROCESSING - get submit button
+            Button bSubmit = findViewById(R.id.submit_button);
+
+            // PROCESSING - set submit button gone
+            bSubmit.setVisibility(View.GONE);
+
             // OUTPUT - draw the first question
             drawTest();
         } else if (questionCount < questionsAmt) {
@@ -123,24 +144,52 @@ public class MainActivity extends AppCompatActivity {
             // OUTPUT - draw the current question
             drawTest();
         } else {
-            // PROCESSING - create a new toast
-            Toast thinkingToast = Toast.makeText(getApplicationContext(), R.string.thinking_result_ready, Toast.LENGTH_SHORT);
-            thinkingToast.show();
+            // PROCESSING - get the radio group
+            RadioGroup radioGroup = findViewById(R.id.radioGroup);
 
-            // PROCESSING - wait until all of the toasts displayed, then change activity, and draw
-            // result
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
+            // PROCESSING - remove radio group
+            radioGroup.setVisibility(View.GONE);
+
+            // PROCESSING - get all checkboxes
+            android.widget.CheckBox check1 = findViewById(R.id.checkBox1);
+            android.widget.CheckBox check2 = findViewById(R.id.checkBox2);
+            android.widget.CheckBox check3 = findViewById(R.id.checkBox3);
+            android.widget.CheckBox check4 = findViewById(R.id.checkBox4);
+            android.widget.CheckBox check5 = findViewById(R.id.checkBox5);
+
+            // PROCESSING - set checkboxes visible
+            check1.setVisibility(View.VISIBLE);
+            check2.setVisibility(View.VISIBLE);
+            check3.setVisibility(View.VISIBLE);
+            check4.setVisibility(View.VISIBLE);
+            check5.setVisibility(View.VISIBLE);
+
+            TextView questionTitle = findViewById(R.id.questionTitle);
+            questionTitle.setText(R.string.who_r_u_neo);
+
+            // PROCESSING - get submit button
+            Button bSubmit = findViewById(R.id.submit_button);
+
+            // PROCESSING - set submit button visible
+            bSubmit.setVisibility(View.VISIBLE);
+
+            bSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void run() {
+                public void onClick(View view) {
+                    // PROCESSING - get all checkboxes
+                    android.widget.CheckBox check1 = findViewById(R.id.checkBox1);
+                    android.widget.CheckBox check2 = findViewById(R.id.checkBox2);
+                    android.widget.CheckBox check3 = findViewById(R.id.checkBox3);
+                    android.widget.CheckBox check4 = findViewById(R.id.checkBox4);
+                    android.widget.CheckBox check5 = findViewById(R.id.checkBox5);
+
                     // PROCESSING - change activity
                     setContentView(R.layout.results);
 
-                    // PROCESSING - draw result
-                    drawResult();
+                    drawResult(check1.isChecked(), check2.isChecked(), check3.isChecked(),
+                               check4.isChecked(), check5.isChecked());
                 }
-            }, 1000);
-
+            });
         }
     }
 
@@ -169,8 +218,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This function will show a result to the user (based on user's answers)
      */
-    @SuppressLint("StringFormatInvalid")
-    private void drawResult() {
+    @SuppressLint({"StringFormatInvalid", "StringFormatMatches"})
+    private void drawResult(boolean checkedOut1, boolean checkedOut2, boolean checkedOut3,
+                            boolean checkedOut4, boolean checkedOut5) {
         TextView answerTitle = findViewById(R.id.answer_title);
         TextView answerDesc = findViewById(R.id.answer_description);
         TextView answerLink = findViewById(R.id.language_link);
@@ -180,6 +230,30 @@ public class MainActivity extends AppCompatActivity {
         // greatest amount of points
         int bestOption = greatestOfFive(outcome1, outcome2, outcome3, outcome4, outcome5);
 
+        // PROCESSING - create a new toast
+        Toast thinkingToast;
+
+        String guess = "";
+
+        if(checkedOut1){
+            guess += getString(R.string.system_programmer) + " " + (int)(((float)outcome1 / questionsAmt) * 100) + "%\n";
+        }
+        if(checkedOut2){
+            guess += getString(R.string.php_programmer) + " " + (int)(((float)outcome2 / questionsAmt) * 100) + "%\n";
+        }
+        if(checkedOut3){
+            guess += getString(R.string.front_end) + " " + (int)(((float)outcome3 / questionsAmt) * 100) + "%\n";
+        }
+        if(checkedOut4){
+            guess += getString(R.string.java_programmer) + " " + (int)(((float)outcome4 / questionsAmt) * 100) + "%\n";
+        }
+        if(checkedOut5){
+            guess += getString(R.string.python_programmer) + " " + (int)(((float)outcome5 / questionsAmt) * 100) + "%\n";
+        }
+
+        TextView percentageMatch = findViewById(R.id.match_percentage_text);
+        percentageMatch.setText(guess);
+
         // OUTPUT - based on the outcome display the result
         switch (bestOption) {
             case 1:
@@ -187,31 +261,60 @@ public class MainActivity extends AppCompatActivity {
                 answerDesc.setText(getString(R.string.system_programmer_result, userName));
                 answerLink.setText(R.string.system_programmer_link);
                 answerImg.setImageResource(R.drawable.system_programmer);
+                thinkingToast = Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.thinking_result_ready,
+                                (int)(((float)bestOption / questionsAmt) * 100)),
+                        Toast.LENGTH_SHORT);
+                thinkingToast.show();
                 break;
             case 2:
                 answerTitle.setText(R.string.php_programmer);
                 answerDesc.setText(getString(R.string.php_programmer_result, userName));
                 answerLink.setText(R.string.php_programmer_link);
                 answerImg.setImageResource(R.drawable.php_programmer);
+                thinkingToast = Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.thinking_result_ready,
+                                (int)(((float)bestOption / questionsAmt) * 100)),
+                        Toast.LENGTH_SHORT);
+                thinkingToast.show();
                 break;
             case 3:
                 answerTitle.setText(R.string.front_end);
                 answerDesc.setText(getString(R.string.front_end_result, userName));
                 answerLink.setText(R.string.front_end_link);
                 answerImg.setImageResource(R.drawable.js);
+                thinkingToast = Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.thinking_result_ready,
+                                (int)(((float)bestOption / questionsAmt) * 100)),
+                        Toast.LENGTH_SHORT);
+                thinkingToast.show();
                 break;
             case 4:
                 answerTitle.setText(R.string.java_programmer);
                 answerDesc.setText(getString(R.string.java_programmer_result, userName));
                 answerLink.setText(R.string.java_programmer_link);
                 answerImg.setImageResource(R.drawable.java);
+                thinkingToast = Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.thinking_result_ready,
+                                (int)(((float)bestOption / questionsAmt) * 100)),
+                        Toast.LENGTH_SHORT);
+                thinkingToast.show();
                 break;
             case 5:
                 answerTitle.setText(R.string.python_programmer);
                 answerDesc.setText(getString(R.string.python_programmer_result, userName));
                 answerLink.setText(R.string.python_programmer_link);
                 answerImg.setImageResource(R.drawable.python);
-//                answerImg.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                thinkingToast = Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.thinking_result_ready,
+                                (int)(((float)bestOption / questionsAmt) * 100)),
+                        Toast.LENGTH_SHORT);
+                thinkingToast.show();
                 break;
         }
     }

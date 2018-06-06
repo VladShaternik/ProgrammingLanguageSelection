@@ -38,6 +38,7 @@
         android:text="@string/front_end"
         android:textColor="@android:color/black"
         android:textSize="@dimen/title_font_size"
+        app:layout_constraintBottom_toTopOf="@+id/match_percentage_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,14 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/medium_margin"
         android:layout_marginStart="@dimen/medium_margin"
-        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginTop="8dp"
         android:text="@string/front_end_result"
         android:textAlignment="viewStart"
         android:textColor="@android:color/black"
         android:textSize="@dimen/default_font_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer_title" />
+        app:layout_constraintTop_toBottomOf="@+id/match_percentage_text" />
 
     <TextView
         android:id="@+id/language_link"
@@ -89,5 +90,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/language_link"
         app:layout_constraintVertical_bias="@dimen/constrain_bias_min" />
+
+    <TextView
+        android:id="@+id/match_percentage_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorSecondary"
+        app:layout_constraintBottom_toTopOf="@+id/answer_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer_title" />
 
 </android.support.constraint.ConstraintLayout>

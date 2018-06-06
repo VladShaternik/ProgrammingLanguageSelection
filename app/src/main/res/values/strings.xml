@@ -15,6 +15,7 @@
 
     <!-- Buttons -->
     <string name="begin_test_button">Begin</string>
+    <string name="submit_test_button">Submit</string>
     <string name="repeat_test_button">Try again</string>
 
     <!-- Question counter -->
@@ -97,6 +98,9 @@
     <string name="q_8_answer_3">Both are fine</string>
     <string name="q_8_answer_4">Whet? I don\'t know what is this. Show me the results!</string>
 
+    <!-- Final question -->
+    <string name="who_r_u_neo">Who do you think you will become?</string>
+
     <!-- Outcomes -->
     <!-- First outcome -->
     <string name="system_programmer">System programmer ⭐</string>
@@ -149,5 +153,5 @@
         https://www.udacity.com/course/programming-foundations-with-python--ud036</string>
 
     <!-- Thinking toasts -->
-    <string name="thinking_result_ready">Aha! Here is a result!</string>
+    <string name="thinking_result_ready"><xliff:g example="100">%d</xliff:g>%% match!</string>
 </resources>
