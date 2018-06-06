@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         if (isFirstEntry) {
             // PROCESSING - check whether the user entered name. If true then store it
             EditText userNameInput = findViewById(R.id.name_input);
-            if(!userNameInput.getText().toString().isEmpty()) {
-                userName = userNameInput.getText().toString();
+            if(!userNameInput.getText().toString().trim().isEmpty()) {
+                userName = userNameInput.getText().toString().trim();
             }
 
             // PROCESSING - set isFirstEntry to false (so we do not come back to this state after
@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)bestOption / questionsAmt) * 100)),
+                                (int)(((float)outcome1 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)bestOption / questionsAmt) * 100)),
+                                (int)(((float)outcome2 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -288,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)bestOption / questionsAmt) * 100)),
+                                (int)(((float)outcome3 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -300,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)bestOption / questionsAmt) * 100)),
+                                (int)(((float)outcome4 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)bestOption / questionsAmt) * 100)),
+                                (int)(((float)outcome5 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;

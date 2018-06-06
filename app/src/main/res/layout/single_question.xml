@@ -1,184 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/question"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:context="com.example.android.programminglanguageselection.MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="@dimen/value_decided_by_constrain"
-        android:layout_height="@dimen/questions_count_height"
-        android:layout_margin="@dimen/questions_count_margin"
-        android:layout_marginEnd="@dimen/medium_margin"
-        android:layout_marginStart="@dimen/small_margin"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="@+id/questionCount"
-        app:layout_constraintEnd_toStartOf="@+id/questionCount"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/questionCount" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="@dimen/value_decided_by_constrain"
-        android:layout_height="@dimen/questions_count_height"
-        android:layout_margin="@dimen/questions_count_margin"
-        android:layout_marginEnd="@dimen/medium_margin"
-        android:layout_marginStart="@dimen/small_margin"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="@+id/questionCount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/questionCount"
-        app:layout_constraintTop_toTopOf="@+id/questionCount" />
-
-    <TextView
-        android:id="@+id/questionCount"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/question"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:layout_marginStart="@dimen/small_margin"
-        android:layout_marginTop="@dimen/small_margin"
-        android:text="@string/question_count"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
 
-    <TextView
-        android:id="@+id/questionTitle"
-        android:layout_width="@dimen/value_decided_by_constrain"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:layout_marginStart="@dimen/big_margin"
-        android:layout_marginTop="@dimen/small_margin"
-        android:text="@string/question_1"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionCount" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/value_decided_by_constrain"
+            android:layout_height="@dimen/questions_count_height"
+            android:layout_margin="@dimen/questions_count_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/small_margin"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/questionCount"
+            app:layout_constraintEnd_toStartOf="@+id/questionCount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/questionCount" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="@dimen/value_decided_by_constrain"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:layout_marginStart="@dimen/big_margin"
-        android:layout_marginTop="@dimen/small_margin"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionTitle">
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/value_decided_by_constrain"
+            android:layout_height="@dimen/questions_count_height"
+            android:layout_margin="@dimen/questions_count_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginStart="@dimen/small_margin"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/questionCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/questionCount"
+            app:layout_constraintTop_toTopOf="@+id/questionCount" />
 
-        <RadioButton
-            android:id="@+id/answer1"
+        <TextView
+            android:id="@+id/questionCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="@dimen/layout_weight_higher"
-            android:onClick="nextQuestion"
-            android:text="@string/q_1_answer_1"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/question_count"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioButton
-            android:id="@+id/answer2"
+        <TextView
+            android:id="@+id/questionTitle"
+            android:layout_width="@dimen/value_decided_by_constrain"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/question_1"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionCount" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="@dimen/value_decided_by_constrain"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/questionTitle">
+
+            <RadioButton
+                android:id="@+id/answer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="@dimen/layout_weight_higher"
+                android:onClick="nextQuestion"
+                android:text="@string/q_1_answer_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/answer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="@dimen/layout_weight_higher"
+                android:onClick="nextQuestion"
+                android:text="@string/q_1_answer_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answer1" />
+
+            <RadioButton
+                android:id="@+id/answer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="@dimen/layout_weight_higher"
+                android:onClick="nextQuestion"
+                android:text="@string/q_1_answer_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answer2" />
+
+            <RadioButton
+                android:id="@+id/answer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="@dimen/layout_weight_higher"
+                android:onClick="nextQuestion"
+                android:text="@string/q_1_answer_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/answer3" />
+
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/checkBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="@dimen/layout_weight_higher"
-            android:onClick="nextQuestion"
-            android:text="@string/q_1_answer_2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer1" />
+            android:layout_marginTop="8dp"
+            android:text="@string/system_programmer"
+            app:layout_constraintStart_toStartOf="@+id/checkBox2"
+            app:layout_constraintTop_toBottomOf="@+id/questionTitle" />
 
-        <RadioButton
-            android:id="@+id/answer3"
+        <CheckBox
+            android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="@dimen/layout_weight_higher"
-            android:onClick="nextQuestion"
-            android:text="@string/q_1_answer_3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer2" />
+            android:text="@string/php_programmer"
+            app:layout_constraintStart_toStartOf="@+id/checkBox3"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
 
-        <RadioButton
-            android:id="@+id/answer4"
+        <CheckBox
+            android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="@dimen/layout_weight_higher"
-            android:onClick="nextQuestion"
-            android:text="@string/q_1_answer_4"
+            android:text="@string/front_end"
+            app:layout_constraintStart_toStartOf="@+id/checkBox4"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/java_programmer"
+            app:layout_constraintStart_toStartOf="@+id/checkBox5"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/python_programmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.126"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/answer3" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
 
-    </RadioGroup>
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_test_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/system_programmer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionTitle" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/php_programmer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/front_end"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/java_programmer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/python_programmer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
-
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/submit_test_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
