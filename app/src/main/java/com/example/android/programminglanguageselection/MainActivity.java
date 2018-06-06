@@ -11,6 +11,8 @@ import android.annotation.SuppressLint;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +56,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         userName = getResources().getString(R.string.default_username);
+
+        Button bBegin = findViewById(R.id.beginButton);
+        bBegin.setVisibility(View.GONE);
+
+        EditText protection = findViewById(R.id.protection_input);
+        protection.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals("1024")) {
+                    Button bBegin = findViewById(R.id.beginButton);
+                    bBegin.setVisibility(View.VISIBLE);
+
+                    EditText protection = findViewById(R.id.protection_input);
+                    protection.setVisibility(View.GONE);
+
+                    TextView protectionQuestion = findViewById(R.id.protection_question);
+                    protectionQuestion.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     /**
@@ -79,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         if (isFirstEntry) {
             // PROCESSING - check whether the user entered name. If true then store it
             EditText userNameInput = findViewById(R.id.name_input);
-            if(!userNameInput.getText().toString().trim().isEmpty()) {
+            if (!userNameInput.getText().toString().trim().isEmpty()) {
                 userName = userNameInput.getText().toString().trim();
             }
 
@@ -187,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                     setContentView(R.layout.results);
 
                     drawResult(check1.isChecked(), check2.isChecked(), check3.isChecked(),
-                               check4.isChecked(), check5.isChecked());
+                            check4.isChecked(), check5.isChecked());
                 }
             });
         }
@@ -213,6 +244,40 @@ public class MainActivity extends AppCompatActivity {
 
         // PROCESSING - change the activity
         setContentView(R.layout.activity_main);
+
+        Button bBegin = findViewById(R.id.beginButton);
+        bBegin.setVisibility(View.GONE);
+
+        EditText protection = findViewById(R.id.protection_input);
+        protection.setVisibility(View.VISIBLE);
+
+        TextView protectionQuestion = findViewById(R.id.protection_question);
+        protectionQuestion.setVisibility(View.VISIBLE);
+
+        protection.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals("1024")) {
+                    Button bBegin = findViewById(R.id.beginButton);
+                    bBegin.setVisibility(View.VISIBLE);
+
+                    EditText protection = findViewById(R.id.protection_input);
+                    protection.setVisibility(View.GONE);
+
+                    TextView protectionQuestion = findViewById(R.id.protection_question);
+                    protectionQuestion.setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     /**
@@ -235,20 +300,20 @@ public class MainActivity extends AppCompatActivity {
 
         String guess = "";
 
-        if(checkedOut1){
-            guess += getString(R.string.system_programmer) + " " + (int)(((float)outcome1 / questionsAmt) * 100) + "%\n";
+        if (checkedOut1) {
+            guess += getString(R.string.system_programmer) + " " + (int) (((float) outcome1 / questionsAmt) * 100) + "%\n";
         }
-        if(checkedOut2){
-            guess += getString(R.string.php_programmer) + " " + (int)(((float)outcome2 / questionsAmt) * 100) + "%\n";
+        if (checkedOut2) {
+            guess += getString(R.string.php_programmer) + " " + (int) (((float) outcome2 / questionsAmt) * 100) + "%\n";
         }
-        if(checkedOut3){
-            guess += getString(R.string.front_end) + " " + (int)(((float)outcome3 / questionsAmt) * 100) + "%\n";
+        if (checkedOut3) {
+            guess += getString(R.string.front_end) + " " + (int) (((float) outcome3 / questionsAmt) * 100) + "%\n";
         }
-        if(checkedOut4){
-            guess += getString(R.string.java_programmer) + " " + (int)(((float)outcome4 / questionsAmt) * 100) + "%\n";
+        if (checkedOut4) {
+            guess += getString(R.string.java_programmer) + " " + (int) (((float) outcome4 / questionsAmt) * 100) + "%\n";
         }
-        if(checkedOut5){
-            guess += getString(R.string.python_programmer) + " " + (int)(((float)outcome5 / questionsAmt) * 100) + "%\n";
+        if (checkedOut5) {
+            guess += getString(R.string.python_programmer) + " " + (int) (((float) outcome5 / questionsAmt) * 100) + "%\n";
         }
 
         TextView percentageMatch = findViewById(R.id.match_percentage_text);
@@ -264,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)outcome1 / questionsAmt) * 100)),
+                                (int) (((float) outcome1 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -276,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)outcome2 / questionsAmt) * 100)),
+                                (int) (((float) outcome2 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -288,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)outcome3 / questionsAmt) * 100)),
+                                (int) (((float) outcome3 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -300,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)outcome4 / questionsAmt) * 100)),
+                                (int) (((float) outcome4 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;
@@ -312,7 +377,7 @@ public class MainActivity extends AppCompatActivity {
                 thinkingToast = Toast.makeText(
                         getApplicationContext(),
                         getString(R.string.thinking_result_ready,
-                                (int)(((float)outcome5 / questionsAmt) * 100)),
+                                (int) (((float) outcome5 / questionsAmt) * 100)),
                         Toast.LENGTH_SHORT);
                 thinkingToast.show();
                 break;

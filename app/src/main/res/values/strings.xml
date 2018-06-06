@@ -10,8 +10,10 @@
         this problem, I made a short interactive test, which will help to determine, which
         programming language is the best for you ☺\n\nJust tell me your name and we can begin!</string>
 
-    <!-- Name entry form  -->
+    <!-- Entry forms  -->
     <string name="name_entry_form">Name</string>
+    <string name="protection_entry_form">Protection against regular people:</string>
+    <string name="protection_entry_form_hint_question">2¹⁰=?</string>
 
     <!-- Buttons -->
     <string name="begin_test_button">Begin</string>
